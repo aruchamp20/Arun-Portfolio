@@ -1,6 +1,6 @@
 # Arun Bondalapati — portfolio
 
-A single-page, "talking-video" personal portfolio. White, black and gray only; one continuous scroll; every section its own component with its own animation. Built with Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS 4 and Lenis. No three.js, no GSAP, no external scripts at runtime, self-hosted fonts.
+A single-page, "talking-video" personal portfolio. An indigo, coral, teal, amber and pink palette on warm paper; one continuous scroll; every section its own component with its own animation. Built with Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS 4 and Lenis. No three.js, no GSAP, no external scripts at runtime, self-hosted fonts.
 
 Every word on the site comes from the resume in `public/Arun-Bondalapati-CV.pdf`, transcribed into `src/lib/data.ts`. Components only read from that file.
 
@@ -54,7 +54,7 @@ Then `npm run build` again: `src/app/page.tsx` checks for `public/hero/hero.mp4`
 
 ## Deploying
 
-- **GitHub Pages**: `.github/workflows/deploy-pages.yml` builds a static export on every push to `main` (and to `claude/portfolio-site`) and publishes it to `https://<owner>.github.io/<repo>/`. It enables Pages on first run; the Pages source must stay set to "GitHub Actions" in the repository settings.
+- **GitHub Pages**: `.github/workflows/deploy-pages.yml` builds a static export on every push to `main` and publishes it to `https://<owner>.github.io/<repo>/`. It enables Pages on first run; the Pages source must stay set to "GitHub Actions" in the repository settings.
 - **Anywhere static**: `STATIC_EXPORT=1 npm run build` writes `./out`; add `BASE_PATH=/sub-path` when the site is not served from the domain root.
 - **Vercel / Netlify**: import the repo; the default `npm run build` is a normal Next.js build.
 

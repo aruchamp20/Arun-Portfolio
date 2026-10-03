@@ -123,20 +123,20 @@ export default function Contact() {
         .line{display:block;white-space:nowrap}
         .ch{display:inline-block;transition:transform .5s var(--ease)}
         .ch:hover{transform:translateY(-14%);transition-duration:.18s}
-        .line:last-child .ch{color:var(--mute);font-family:var(--font-serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+        .line:last-child .ch{font-family:var(--font-serif);font-style:italic;font-weight:400;letter-spacing:-.01em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
         .email-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:clamp(28px,5vh,48px)}
-        .email{font-size:clamp(20px,3.2vw,40px);font-weight:600;letter-spacing:-.03em;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px;text-decoration-color:rgba(13,13,13,.25);transition:text-decoration-color .4s;overflow-wrap:anywhere}
-        .email:hover{text-decoration-color:var(--ink)}
-        .copy{height:34px;padding:0 14px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(13,13,13,.2);font-size:13px;font-weight:600;transition:background .4s var(--ease),color .4s var(--ease)}
-        .copy:hover,.copy.is-copied{background:var(--ink);color:#fff}
+        .email{font-size:clamp(20px,3.2vw,40px);font-weight:600;letter-spacing:-.03em;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px;text-decoration-color:var(--accent);transition:text-decoration-color .4s;overflow-wrap:anywhere}
+        .email:hover{text-decoration-color:var(--accent-2)}
+        .copy{height:34px;padding:0 14px;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--accent);color:var(--accent-ink);font-size:13px;font-weight:600;transition:background .4s var(--ease),color .4s var(--ease)}
+        .copy:hover,.copy.is-copied{background:var(--accent);color:#fff}
         .c-links{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:28px}
         .loc{font-size:12px;color:var(--mute);margin-left:6px}
-        .badge{position:absolute;right:var(--gutter);bottom:clamp(24px,6vh,64px);width:120px;height:120px;display:grid;place-items:center;color:var(--ink);animation:spin 18s linear infinite}
+        .badge{position:absolute;right:var(--gutter);bottom:clamp(24px,6vh,64px);width:120px;height:120px;display:grid;place-items:center;color:var(--accent-ink);animation:spin 18s linear infinite}
         .badge svg{position:absolute;inset:0}
-        .badge-dot{width:14px;height:14px;border-radius:50%;background:var(--ink)}
+        .badge-dot{width:14px;height:14px;border-radius:50%;background:var(--grad)}
         .footer{border-top:1px solid var(--line);padding:22px 0}
         .foot-row{display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:12px;color:var(--mute);flex-wrap:wrap}
-        .to-top{color:var(--ink)}
+        .to-top{color:var(--accent-ink);font-weight:700}
         @keyframes spin{to{transform:rotate(360deg)}}
         @media (max-width: 760px){.badge{position:relative;right:auto;bottom:auto;margin:40px 0 0}}
         @media (prefers-reduced-motion: reduce){.badge{animation:none}}

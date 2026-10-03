@@ -69,7 +69,7 @@ export default function About() {
         .col{display:flex;flex-direction:column;min-width:0}
         .intro{gap:18px}
         .intro .h2{max-width:none}
-        .extra{color:var(--mute);font-size:15px;line-height:1.6;padding-left:16px;border-left:1px solid var(--line)}
+        .extra{color:var(--ink-2);font-size:15px;line-height:1.6;padding-left:16px;border-left:3px solid var(--accent-3);border-radius:2px}
         .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
         .card-col{align-items:center;justify-content:flex-start;min-height:560px}
         .facts{justify-content:center;gap:10px}
@@ -77,11 +77,11 @@ export default function About() {
         .facts dl{margin:0;display:grid}
         .fact-row{display:grid;grid-template-columns:100px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--line);align-items:baseline}
         .fact-row:last-child{border-bottom:1px solid var(--line)}
-        .fact-row dt{font-size:12px;color:var(--mute);letter-spacing:.04em}
+        .fact-row dt{font-size:12px;color:var(--accent-ink);letter-spacing:.04em}
         .fact-row dd{margin:0;font-weight:500;overflow-wrap:anywhere}
         .fact-row dd a{border-bottom:1px solid var(--line);transition:border-color .3s}
         .fact-row dd a:hover{border-color:var(--ink)}
-        .quote{margin:28px 0 0;padding:22px 24px;background:var(--card);border-radius:22px;box-shadow:var(--shadow-hair)}
+        .quote{margin:28px 0 0;padding:22px 24px;background:linear-gradient(135deg,rgba(91,75,255,.1),rgba(236,72,153,.1));border-radius:22px;box-shadow:inset 0 0 0 1px rgba(91,75,255,.18)}
         .quote p{font-size:18px;line-height:1.45;letter-spacing:-.01em}
         .quote .accent{font-size:26px;line-height:0}
         .quote cite{display:block;margin-top:10px;font-style:normal;font-size:11px;color:var(--mute);letter-spacing:.06em;text-transform:uppercase}

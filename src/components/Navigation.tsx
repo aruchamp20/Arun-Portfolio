@@ -122,13 +122,13 @@ export default function Navigation() {
       </div>
 
       <style>{`
-        .progress{position:fixed;top:0;left:0;right:0;height:2px;background:var(--ink);transform-origin:0 50%;z-index:60;pointer-events:none}
+        .progress{position:fixed;top:0;left:0;right:0;height:3px;background:var(--grad);transform-origin:0 50%;z-index:60;pointer-events:none}
         .nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px var(--gutter);pointer-events:none}
         .nav > *{pointer-events:auto}
         .brand{display:inline-flex;align-items:center;gap:12px;font-weight:600;letter-spacing:-.02em}
-        .mark{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;box-shadow:inset 0 0 0 1.5px var(--ink);font-family:var(--font-mono);font-size:12px;font-weight:700;letter-spacing:-.02em;transition:background .5s var(--ease),color .5s var(--ease),transform .9s var(--ease)}
+        .mark{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;box-shadow:inset 0 0 0 1.5px var(--accent);color:var(--accent-ink);font-family:var(--font-mono);font-size:12px;font-weight:700;letter-spacing:-.02em;transition:background .5s var(--ease),color .5s var(--ease),transform .9s var(--ease)}
         .brand:hover .mark{transform:rotate(360deg)}
-        .is-scrolled .mark{background:var(--ink);color:#fff}
+        .is-scrolled .mark{background:var(--grad);color:#fff;box-shadow:0 8px 18px -8px rgba(91,75,255,.7)}
         .brand-name{transition:opacity .5s var(--ease),transform .5s var(--ease)}
         .is-scrolled .brand-name{opacity:0;transform:translateX(-6px);pointer-events:none}
         .nav-links{display:none}
@@ -137,7 +137,7 @@ export default function Navigation() {
         .pill a{position:relative;z-index:1;padding:8px 14px;border-radius:999px;font-size:14px;font-weight:500;color:var(--ink-2);transition:color .4s var(--ease)}
         .pill a:hover{color:var(--ink)}
         .pill a.is-active{color:#fff}
-        .indicator{position:absolute;top:4px;bottom:4px;left:0;border-radius:999px;background:var(--ink);transition:transform .6s var(--ease),width .6s var(--ease),opacity .4s var(--ease)}
+        .indicator{position:absolute;top:4px;bottom:4px;left:0;border-radius:999px;background:var(--grad);transition:transform .6s var(--ease),width .6s var(--ease),opacity .4s var(--ease)}
         .menu-btn{height:40px;padding:0 18px;border-radius:999px;background:rgba(255,255,255,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 0 0 1px rgba(13,13,13,.1);font-size:14px;font-weight:600}
         .overlay{position:fixed;inset:0;z-index:45;background:var(--paper);display:flex;flex-direction:column;justify-content:center;padding:var(--gutter);clip-path:circle(0 at calc(100% - 48px) 36px);transition:clip-path .9s var(--ease);visibility:hidden}
         .overlay.is-open{clip-path:circle(150% at calc(100% - 48px) 36px);visibility:visible}
@@ -145,7 +145,7 @@ export default function Navigation() {
         .overlay li{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(120ms + var(--i)*60ms)}
         .overlay.is-open li{opacity:1;transform:none}
         .overlay a{display:flex;align-items:baseline;gap:18px;font-size:clamp(34px,9vw,56px);font-weight:700;letter-spacing:-.045em;line-height:1.1}
-        .overlay a .mono{font-size:13px;color:var(--mute)}
+        .overlay a .mono{font-size:13px;color:var(--accent)}
         .overlay-foot{margin-top:40px;font-size:12px;color:var(--mute)}
         @media (min-width: 900px){.nav-links{display:block}.menu-btn{display:none}.overlay{display:none}}
       `}</style>

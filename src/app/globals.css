@@ -11,6 +11,19 @@
   --soft: #e9e6e0;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --gutter: clamp(18px, 4vw, 64px);
+  /* colour */
+  --accent: #5b4bff;
+  --accent-ink: #4535e6;
+  --accent-2: #ff6b4a;
+  --accent-3: #0ea5a4;
+  --accent-4: #f5a700;
+  --accent-5: #ec4899;
+  --grad: linear-gradient(135deg, #5b4bff 0%, #a855f7 55%, #ff6b4a 100%);
+  --tint: rgba(91, 75, 255, 0.08);
+  --tint-2: rgba(255, 107, 74, 0.1);
+  --tint-3: rgba(14, 165, 164, 0.1);
+  --tint-4: rgba(245, 167, 0, 0.12);
+  --tint-5: rgba(236, 72, 153, 0.1);
   --section-y: clamp(96px, 14vh, 160px);
   --radius: 26px;
   --shadow-hair: inset 0 0 0 1px var(--line);
@@ -61,6 +74,13 @@
     line-height: 1.55;
     overflow-x: hidden;
     overflow-x: clip;
+    background:
+      radial-gradient(900px 600px at 8% 0%, rgba(91, 75, 255, 0.14), transparent 60%),
+      radial-gradient(800px 600px at 100% 12%, rgba(255, 107, 74, 0.14), transparent 60%),
+      radial-gradient(900px 700px at 50% 60%, rgba(14, 165, 164, 0.1), transparent 60%),
+      radial-gradient(700px 600px at 0% 100%, rgba(236, 72, 153, 0.12), transparent 60%),
+      var(--paper);
+    background-attachment: fixed;
   }
 
   a {
@@ -99,12 +119,12 @@
   }
 
   ::selection {
-    background: var(--ink);
-    color: var(--paper);
+    background: var(--accent);
+    color: #fff;
   }
 
   :focus-visible {
-    outline: 2px solid var(--ink);
+    outline: 2px solid var(--accent);
     outline-offset: 3px;
     border-radius: 6px;
   }
@@ -149,9 +169,9 @@
   .tag::before {
     content: "";
     width: 22px;
-    height: 1px;
-    background: var(--ink);
-    opacity: 0.5;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--grad);
   }
 
   .h2 {
@@ -165,7 +185,10 @@
     font-style: italic;
     font-weight: 400;
     letter-spacing: -0.01em;
-    color: var(--mute);
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .lead {
@@ -212,21 +235,23 @@
     transform: translateY(0);
   }
   .btn-primary {
-    background: var(--ink);
+    background: var(--grad);
     color: #fff;
+    box-shadow: 0 10px 24px -12px rgba(91, 75, 255, 0.7);
   }
   .btn-primary:hover {
-    background: #000;
-    box-shadow: 0 12px 24px -12px rgba(13, 13, 13, 0.5);
+    box-shadow: 0 16px 30px -12px rgba(91, 75, 255, 0.8);
+    filter: saturate(1.1);
   }
   .btn-ghost {
-    box-shadow: inset 0 0 0 1px rgba(13, 13, 13, 0.22);
-    background: transparent;
+    box-shadow: inset 0 0 0 1.5px var(--accent);
+    color: var(--accent-ink);
+    background: rgba(255, 255, 255, 0.5);
   }
   .btn-ghost:hover {
-    background: var(--ink);
+    background: var(--accent);
     color: #fff;
-    box-shadow: inset 0 0 0 1px var(--ink);
+    box-shadow: inset 0 0 0 1.5px var(--accent);
   }
 
   /* Reveal-on-scroll (RevealObserver adds .is-in once) */

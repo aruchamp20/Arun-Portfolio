@@ -180,14 +180,15 @@ export default function Hero({ hasVideo }: Props) {
       <style>{`
         .hero{position:relative;height:100svh;min-height:680px;max-height:1200px;overflow:hidden}
         .hero-stage{position:absolute;inset:0;display:flex;justify-content:center;align-items:flex-end;padding-top:72px}
-        .ghost{position:absolute;left:50%;top:50%;transform:translate(-50%,-56%);font-weight:800;font-size:clamp(120px,24vw,420px);letter-spacing:-.06em;line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(13,13,13,.16);user-select:none;white-space:nowrap;pointer-events:none}
+        .ghost{position:absolute;left:50%;top:50%;transform:translate(-50%,-56%);font-weight:800;font-size:clamp(120px,24vw,420px);letter-spacing:-.06em;line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(91,75,255,.28);user-select:none;white-space:nowrap;pointer-events:none}
         .frame{position:relative;height:min(90svh,1040px);aspect-ratio:768/960;max-width:100%}
+        .frame::before{content:"";position:absolute;left:50%;top:38%;width:140%;height:70%;transform:translate(-50%,-50%);background:radial-gradient(ellipse at center,rgba(91,75,255,.22),rgba(255,107,74,.14) 45%,transparent 70%);filter:blur(30px);z-index:0;pointer-events:none}
         .media{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;position:relative;z-index:1}
         .still{animation:breathe 6s ease-in-out infinite;transform-origin:50% 100%;-webkit-mask-image:linear-gradient(to bottom,#000 84%,transparent 100%);mask-image:linear-gradient(to bottom,#000 84%,transparent 100%)}
         .ground{position:absolute;left:50%;bottom:4%;width:46%;height:5%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(ellipse at center,rgba(13,13,13,.16),rgba(13,13,13,0) 70%);z-index:0}
-        .sound{position:absolute;right:calc(50% - min(45svh,520px) + 8px);bottom:28px;width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;z-index:3;transition:transform .5s var(--ease),background .4s var(--ease)}
-        .sound:hover{transform:translateY(-2px);background:#000}
-        .sound.is-blocked::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1.5px solid var(--ink);animation:ping 1.6s var(--ease) infinite}
+        .sound{position:absolute;right:calc(50% - min(45svh,520px) + 8px);bottom:28px;width:46px;height:46px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;z-index:3;transition:transform .5s var(--ease),background .4s var(--ease)}
+        .sound:hover{transform:translateY(-2px)}
+        .sound.is-blocked::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1.5px solid var(--accent);animation:ping 1.6s var(--ease) infinite}
         .hero-copy{position:absolute;left:0;right:0;bottom:0;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:end;gap:18px;padding-bottom:clamp(28px,5vh,56px);pointer-events:none}
         .hero-copy > *{pointer-events:auto}
         .hero h1{font-size:clamp(40px,6.2vw,92px);max-width:8ch;grid-column:1}

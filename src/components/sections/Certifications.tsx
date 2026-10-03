@@ -36,18 +36,18 @@ export default function Certifications() {
       </div>
 
       <style>{`
-        .certs{background:var(--card);padding-block:clamp(72px,10vh,120px)}
+        .certs{background:rgba(255,255,255,.75);backdrop-filter:blur(6px);padding-block:clamp(72px,10vh,120px)}
         .certs-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:clamp(28px,5vw,80px);align-items:start}
         .sticky{position:sticky;top:110px}
-        .count{margin-top:22px;font-size:12px;color:var(--mute);letter-spacing:.06em}
+        .count{margin-top:22px;font-size:12px;color:#00A1E0;font-weight:700;letter-spacing:.06em}
         .list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
         .cert-row{border-bottom:1px solid var(--line)}
         .cert-row-link{position:relative;display:grid;grid-template-columns:44px 1fr auto 28px;align-items:center;gap:18px;padding:26px 12px;overflow:hidden;isolation:isolate;color:var(--ink);transition:color .5s var(--ease)}
-        .cert-row-link::before{content:"";position:absolute;inset:0;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease);z-index:-1}
+        .cert-row-link::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#00A1E0,#5b4bff);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease);z-index:-1}
         .cert-row-link:hover::before,.cert-row-link:focus-visible::before{transform:scaleX(1)}
         .cert-row-link:hover,.cert-row-link:focus-visible{color:#fff}
         .cert-row-link:focus-visible{outline-offset:-2px}
-        .cert-idx{font-size:12px;color:var(--mute);transition:color .5s}
+        .cert-idx{font-size:12px;color:#00A1E0;font-weight:700;transition:color .5s}
         .cert-row-link:hover .cert-idx,.cert-row-link:focus-visible .cert-idx,.cert-row-link:hover .issuer,.cert-row-link:focus-visible .issuer{color:rgba(255,255,255,.7)}
         .title{font-size:clamp(18px,2vw,26px);font-weight:600;letter-spacing:-.03em;line-height:1.15}
         .issuer{font-size:12px;color:var(--mute);white-space:nowrap}
