@@ -166,6 +166,17 @@ function Card({ a, i, total, active, color }: { a: Achievement; i: number; total
         .cap{font-size:13px;color:var(--mute);margin-top:3px}
         .det{font-size:10px;color:var(--mute);margin-top:8px;letter-spacing:.02em}
         .ach-num{font-size:clamp(44px,5.4vw,76px);font-weight:700;letter-spacing:-.06em;line-height:.9;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--cc)}
+        .ach-num{flex:none}
+        .txt{flex:1 1 auto}
+        @media (max-width: 1100px){
+          .ach-card{height:auto;min-height:clamp(240px,34vh,300px);width:clamp(300px,78vw,420px);padding:18px 20px;gap:18px}
+          .ach-bottom{flex-direction:column;align-items:stretch;gap:12px}
+          .ach-num{align-self:flex-end;font-size:clamp(40px,11vw,60px)}
+          .label{font-size:16px}
+          .cap{font-size:12.5px}
+          .det{font-size:9.5px;margin-top:6px}
+          .ach-tile{width:56px;height:56px;border-radius:16px}
+        }
       `}</style>
     </article>
   );
