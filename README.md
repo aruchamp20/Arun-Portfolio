@@ -96,3 +96,7 @@ Last measured: Lighthouse Performance 100, Accessibility 100, Best Practices 100
 ## Accessibility and motion
 
 Semantic sections with a correct heading order, visible keyboard focus everywhere, text equivalents for every visual, and `prefers-reduced-motion` disables Lenis, reveals, the pendulum, the count-ups and all decorative animation.
+
+## Ghughumalu
+
+`ghughumalu/` is a separate Next.js project: an editorial, scroll-driven site for the Ghughumalu dining room. It has its own `package.json` and README, and the Pages workflow builds it under `/ghughumalu/` next to the portfolio.
