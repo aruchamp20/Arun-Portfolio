@@ -20,13 +20,13 @@ export default function Work() {
     <section id="work" className="section work" aria-labelledby="work-h">
       <div className="wrap">
         <p className="tag rv">
-          03 <span>— Selected work</span>
+          03 <span>/ Selected work</span>
         </p>
         <h2 id="work-h" className="h2 rv" style={{ "--i": 1 } as React.CSSProperties}>
           Things I&rsquo;ve <em>built.</em>
         </h2>
         <p className="lead sub rv" style={{ "--i": 2 } as React.CSSProperties}>
-          {PROJECTS.length} projects from the résumé. Hover, tap or focus a panel to open it.
+          {PROJECTS.length} projects from the resume. Hover, tap or focus a panel to open it.
         </p>
 
         <div className={`gallery rv ${isMobile ? "is-stack" : ""}`} style={{ "--i": 3 } as React.CSSProperties}>
@@ -58,7 +58,7 @@ export default function Work() {
                 <div className="body" id={`panel-${p.id}`} hidden={!isOpen && isMobile}>
                   <div className="text">
                     <p className="mono kicker">
-                      {p.index} — {p.kicker}
+                      {p.index} / {p.kicker}
                     </p>
                     <h3 id={`p-${p.id}`}>{p.title}</h3>
                     <p className="desc">{p.description}</p>

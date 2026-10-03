@@ -41,7 +41,7 @@ export default function Contact() {
       <section id="contact" className="section contact" aria-labelledby="contact-h">
         <div className="wrap">
           <p className="tag rv">
-            07 <span>— Contact</span>
+            07 <span>/ Contact</span>
           </p>
           <h2 id="contact-h" className="big rv" style={{ "--i": 1 } as React.CSSProperties} aria-label={LINES.join(" ")}>
             {LINES.map((line, li) => (

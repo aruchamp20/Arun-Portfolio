@@ -54,7 +54,7 @@ export default function Achievements() {
         <div className="wrap head">
           <div>
             <p className="tag rv">
-              06 <span>— Achievements</span>
+              06 <span>/ Achievements</span>
             </p>
             <h2 id="ach-h" className="h2 rv" style={{ "--i": 1 } as React.CSSProperties}>
               Proud <em>moments.</em>

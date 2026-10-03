@@ -26,7 +26,7 @@ const jetbrainsMono = localFont({
   display: "swap",
 });
 
-const title = `${PROFILE.name} — ${PROFILE.role}`;
+const title = `${PROFILE.name}, ${PROFILE.role}`;
 const description = `${PROFILE.name}. ${PROFILE.tagline}`;
 
 export const metadata: Metadata = {

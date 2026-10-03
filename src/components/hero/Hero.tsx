@@ -172,7 +172,7 @@ export default function Hero({ hasVideo }: Props) {
             Let&rsquo;s talk
           </a>
           <a href={PROFILE.resume} className="btn btn-ghost" download={PROFILE.resumeFileName}>
-            Résumé <span aria-hidden="true">↓</span>
+            Resume <span aria-hidden="true">↓</span>
           </a>
         </div>
       </div>

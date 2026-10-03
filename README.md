@@ -2,7 +2,7 @@
 
 A single-page, "talking-video" personal portfolio. White, black and gray only; one continuous scroll; every section its own component with its own animation. Built with Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS 4 and Lenis. No three.js, no GSAP, no external scripts at runtime, self-hosted fonts.
 
-Every word on the site comes from the résumé in `public/Arun-Bondalapati-CV.pdf`, transcribed into `src/lib/data.ts`. Components only read from that file.
+Every word on the site comes from the resume in `public/Arun-Bondalapati-CV.pdf`, transcribed into `src/lib/data.ts`. Components only read from that file.
 
 ## Run it
 
@@ -22,7 +22,7 @@ Requires Node 20+.
 |---|---------|-----------|-----------|
 | — | Hero | `components/hero/Hero.tsx` | Looping intro video (or still) multiplied into the paper; sound unlock; pauses when <35 % visible |
 | 01 | About | `sections/About.tsx` + `ui/IDCard.tsx` | Lanyard ID card with damped pendulum swing, idle sway and 3D flip (hover / tap / Enter) |
-| 02 | Skills | `sections/Skills.tsx` | Periodic table of every résumé skill; diagonal wave reveal; family filters; sticky inspector with brand logo |
+| 02 | Skills | `sections/Skills.tsx` | Periodic table of every resume skill; diagonal wave reveal; family filters; sticky inspector with brand logo |
 | 03 | Work | `sections/Work.tsx` | Expanding accordion gallery; grayscale illustrative mini-UIs with clip-path wipe; vertical accordion on mobile |
 | 04 | Certifications | `sections/Certifications.tsx` | Ink-flood index rows on a white band |
 | 05 | Experience | `sections/Experience.tsx` | Education + experience on one timeline; spine draws with scroll progress |

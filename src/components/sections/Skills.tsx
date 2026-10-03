@@ -28,7 +28,7 @@ export default function Skills() {
     <section id="skills" className="section skills" aria-labelledby="skills-h">
       <div className="wrap">
         <p className="tag rv">
-          02 <span>— Skills</span>
+          02 <span>/ Skills</span>
         </p>
         <h2 id="skills-h" className="h2 rv" style={{ "--i": 1 } as React.CSSProperties}>
           The periodic table of <em>my stack.</em>

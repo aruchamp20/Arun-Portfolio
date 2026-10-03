@@ -14,13 +14,13 @@ export default function Experience() {
     <section id="experience" className="section exp" aria-labelledby="exp-h">
       <div className="wrap">
         <p className="tag rv">
-          05 <span>— Experience</span>
+          05 <span>/ Experience</span>
         </p>
         <h2 id="exp-h" className="h2 rv" style={{ "--i": 1 } as React.CSSProperties}>
           One path, <em>so far.</em>
         </h2>
         <p className="lead sub rv" style={{ "--i": 2 } as React.CSSProperties}>
-          Education and experience in chronological order, from the résumé.
+          Education and experience in chronological order, from the resume.
         </p>
 
         <ol className="timeline" ref={ref} style={{ "--p": drawn } as React.CSSProperties}>
@@ -61,7 +61,7 @@ export default function Experience() {
             </div>
             <div className="stop-card dashed">
               <h3>
-                Next — <em className="accent">Your team?</em>
+                Next: <em className="accent">Your team?</em>
               </h3>
               <p className="detail">Seeking AI automation, integration, RevOps or solutions engineering roles.</p>
             </div>

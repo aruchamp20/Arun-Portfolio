@@ -6,7 +6,7 @@ export default function Certifications() {
       <div className="wrap certs-grid">
         <div className="sticky">
           <p className="tag rv">
-            04 <span>— Certifications</span>
+            04 <span>/ Certifications</span>
           </p>
           <h2 id="certs-h" className="h2 rv" style={{ "--i": 1 } as React.CSSProperties}>
             Always <em>learning.</em>

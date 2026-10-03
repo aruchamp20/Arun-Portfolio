@@ -10,7 +10,7 @@ export default function About() {
         <div className="about-grid">
           <div className="col intro">
             <p className="tag rv">
-              01 <span>— About</span>
+              01 <span>/ About</span>
             </p>
             <h2 id="about-h" className="h2 rv" style={{ "--i": 1 } as React.CSSProperties}>
               Hi, I&rsquo;m <em>{PROFILE.firstName}.</em>
@@ -23,7 +23,7 @@ export default function About() {
             </p>
             <div className="btns rv" style={{ "--i": 4 } as React.CSSProperties}>
               <a href={PROFILE.resume} className="btn btn-primary" download={PROFILE.resumeFileName}>
-                Résumé <span aria-hidden="true">↓</span>
+                Resume <span aria-hidden="true">↓</span>
               </a>
               {PROFILE.github && (
                 <a href={PROFILE.github} className="btn btn-ghost" target="_blank" rel="noreferrer">
@@ -58,7 +58,7 @@ export default function About() {
                 {PROFILE.quote}
                 <span className="accent">&rdquo;</span>
               </p>
-              <cite className="mono">from the résumé</cite>
+              <cite className="mono">from the resume</cite>
             </blockquote>
           </div>
         </div>

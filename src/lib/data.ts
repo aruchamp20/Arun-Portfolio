@@ -1,6 +1,6 @@
 /**
  * Single source of truth for every piece of text on the site.
- * Everything here is transcribed from the résumé (public/Arun-Bondalapati-CV.pdf).
+ * Everything here is transcribed from the resume (public/Arun-Bondalapati-CV.pdf).
  * Components only read from this file; nothing is invented.
  */
 
@@ -73,13 +73,13 @@ export const PROFILE = {
   location: "Bristol, United Kingdom",
   resumeSummary:
     "I run LLM agents in production and build what they run on. Nine years on the Salesforce platform, the last five leading CRM engineering at GDS Group: keeping Salesforce and HubSpot agreeing, around seven scheduled agents working the live systems, and the AI automation and internal software on top, built with Claude Code and MCP. As a single engineer I have shipped 60+ internal tools into production, each owned end to end from build and deployment to access control and support. 4x Salesforce Certified with an MSc in Advanced Computer Science. Seeking AI automation, integration, RevOps or solutions engineering roles.",
-  /** One extra short line, from the résumé's "Leadership & ways of working". */
+  /** One extra short line, from the resume's "Leadership & ways of working". */
   extraLine:
     "Work in the open: dry-run defaults, read-back verification and visible agent actions, so every automated change can be checked by a person.",
-  /** Paraphrase of the résumé's own wording (used as the About quote). */
+  /** Paraphrase of the resume's own wording (used as the About quote). */
   quote:
     "Every automated change should be visible, dry-run first, and checkable by a person.",
-  /** Not present in the résumé, so these stay undefined and their buttons are not rendered. */
+  /** Not present in the resume, so these stay undefined and their buttons are not rendered. */
   github: undefined as string | undefined,
   linkedin: undefined as string | undefined,
   resume: "Arun-Bondalapati-CV.pdf",
@@ -449,7 +449,7 @@ export const ACHIEVEMENTS: Achievement[] = [
   },
 ];
 
-/** Lines for the back of the ID card, all from the résumé. */
+/** Lines for the back of the ID card, all from the resume. */
 export const ID_CARD_BACK: string[] = [
   "CRM Technical Lead at GDS Group",
   "MSc Advanced Computer Science, Northumbria University",
