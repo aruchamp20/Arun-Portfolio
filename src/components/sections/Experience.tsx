@@ -80,10 +80,10 @@ export default function Experience() {
         .stop-head{display:flex;flex-direction:column;gap:6px;padding-top:12px}
         .year{font-size:13px;font-weight:600}
         .kind{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
-        .stop-card{padding:24px 26px;opacity:.9;transform:translateY(8px);transition:opacity .7s var(--ease),transform .7s var(--ease),box-shadow .6s var(--ease)}
+        .stop-card{padding:24px 26px;opacity:1;transform:translateY(8px);transition:opacity .7s var(--ease),transform .7s var(--ease),box-shadow .6s var(--ease)}
         .is-lit .stop-card{opacity:1;transform:none}
         .stop-card h3{font-size:clamp(19px,2vw,24px)}
-        .place{margin-top:6px;font-size:13px;color:var(--mute)}
+        .place{margin-top:6px;font-size:13px;color:var(--ink-2)}
         .detail{margin-top:12px;color:var(--ink-2);font-size:15px;line-height:1.55}
         .bullets{margin:12px 0 0;padding:0 0 0 16px;display:grid;gap:6px;color:var(--ink-2);font-size:14px;line-height:1.5}
         .dashed{border-radius:var(--radius);border:1.5px dashed rgba(13,13,13,.25);background:transparent}
