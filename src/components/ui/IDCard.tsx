@@ -99,7 +99,7 @@ export default function IDCard() {
               <span className="halo" aria-hidden="true" />
               <div className="photo-ring">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/portrait-bust.webp" alt={`Portrait of ${PROFILE.name}`} width={128} height={156} loading="lazy" />
+                <img src="portrait-bust.webp" alt={`Portrait of ${PROFILE.name}`} width={128} height={156} loading="lazy" />
               </div>
             </div>
             <p className="name">{PROFILE.name}</p>

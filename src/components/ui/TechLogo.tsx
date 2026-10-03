@@ -5,18 +5,18 @@ import type { ReactNode } from "react";
  * and custom thin-line icons for concept skills.
  */
 export const BRAND: Record<string, { name: string; src: string; hex: string }> = {
-  salesforce: { name: "Salesforce", src: "/logos/salesforce.svg", hex: "#00A1E0" },
-  hubspot: { name: "HubSpot", src: "/logos/hubspot.svg", hex: "#FF7A59" },
-  claude: { name: "Claude Code", src: "/logos/claude.svg", hex: "#D97757" },
-  mcp: { name: "Model Context Protocol", src: "/logos/mcp.svg", hex: "#0d0d0d" },
-  zapier: { name: "Zapier", src: "/logos/zapier.svg", hex: "#FF4F00" },
-  nodejs: { name: "Node.js", src: "/logos/nodejs.svg", hex: "#5FA04E" },
-  typescript: { name: "TypeScript", src: "/logos/typescript.svg", hex: "#3178C6" },
-  javascript: { name: "JavaScript", src: "/logos/javascript.svg", hex: "#F7DF1E" },
-  react: { name: "React", src: "/logos/react.svg", hex: "#61DAFB" },
-  vercel: { name: "Vercel", src: "/logos/vercel.svg", hex: "#0d0d0d" },
-  github: { name: "GitHub", src: "/logos/github.svg", hex: "#181717" },
-  jwt: { name: "JSON Web Tokens", src: "/logos/jwt.svg", hex: "#0d0d0d" },
+  salesforce: { name: "Salesforce", src: "logos/salesforce.svg", hex: "#00A1E0" },
+  hubspot: { name: "HubSpot", src: "logos/hubspot.svg", hex: "#FF7A59" },
+  claude: { name: "Claude Code", src: "logos/claude.svg", hex: "#D97757" },
+  mcp: { name: "Model Context Protocol", src: "logos/mcp.svg", hex: "#0d0d0d" },
+  zapier: { name: "Zapier", src: "logos/zapier.svg", hex: "#FF4F00" },
+  nodejs: { name: "Node.js", src: "logos/nodejs.svg", hex: "#5FA04E" },
+  typescript: { name: "TypeScript", src: "logos/typescript.svg", hex: "#3178C6" },
+  javascript: { name: "JavaScript", src: "logos/javascript.svg", hex: "#F7DF1E" },
+  react: { name: "React", src: "logos/react.svg", hex: "#61DAFB" },
+  vercel: { name: "Vercel", src: "logos/vercel.svg", hex: "#0d0d0d" },
+  github: { name: "GitHub", src: "logos/github.svg", hex: "#181717" },
+  jwt: { name: "JSON Web Tokens", src: "logos/jwt.svg", hex: "#0d0d0d" },
 };
 
 const stroke = {

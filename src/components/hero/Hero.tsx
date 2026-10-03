@@ -111,17 +111,17 @@ export default function Hero({ hasVideo }: Props) {
               loop
               playsInline
               preload="auto"
-              poster="/hero/hero-still.webp"
+              poster="hero/hero-still.webp"
               aria-label={`${PROFILE.name} introducing themself: ${PROFILE.role}.`}
             >
-              <source src="/hero/hero.webm" type="video/webm" />
-              <source src="/hero/hero.mp4" type="video/mp4" />
+              <source src="hero/hero.webm" type="video/webm" />
+              <source src="hero/hero.mp4" type="video/mp4" />
             </video>
           ) : (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               className="media still"
-              src="/hero/hero-still.webp"
+              src="hero/hero-still.webp"
               width={768}
               height={960}
               alt={`${PROFILE.name}, ${PROFILE.role}, standing and smiling.`}

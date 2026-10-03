@@ -82,7 +82,7 @@ export const PROFILE = {
   /** Not present in the résumé, so these stay undefined and their buttons are not rendered. */
   github: undefined as string | undefined,
   linkedin: undefined as string | undefined,
-  resume: "/Arun-Bondalapati-CV.pdf",
+  resume: "Arun-Bondalapati-CV.pdf",
   resumeFileName: "Arun-Bondalapati-CV.pdf",
   /** Graduation year of the MSc. */
   gradYear: "2022",
