@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     images: [{ url: "/og.jpg", width: 1200, height: 630, alt: `${PROFILE.name}, ${PROFILE.role}` }],
   },
   twitter: { card: "summary_large_image", title, description, images: ["/og.jpg"] },
-  icons: { icon: "/icon.svg" },
+  icons: { icon: `${process.env.BASE_PATH ?? ""}/icon.svg` },
 };
 
 export const viewport: Viewport = {

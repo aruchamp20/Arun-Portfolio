@@ -52,6 +52,12 @@ What the video pipeline does:
 
 Then `npm run build` again: `src/app/page.tsx` checks for `public/hero/hero.mp4` at build time and switches the hero to the video.
 
+## Deploying
+
+- **GitHub Pages**: `.github/workflows/deploy-pages.yml` builds a static export on every push to `main` (and to `claude/portfolio-site`) and publishes it to `https://<owner>.github.io/<repo>/`. It enables Pages on first run; the Pages source must stay set to "GitHub Actions" in the repository settings.
+- **Anywhere static**: `STATIC_EXPORT=1 npm run build` writes `./out`; add `BASE_PATH=/sub-path` when the site is not served from the domain root.
+- **Vercel / Netlify**: import the repo; the default `npm run build` is a normal Next.js build.
+
 ## Folder structure
 
 ```
