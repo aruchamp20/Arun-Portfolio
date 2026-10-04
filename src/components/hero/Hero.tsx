@@ -98,7 +98,8 @@ export default function Hero({ hasVideo }: Props) {
   return (
     <section id="top" className="hero" ref={sectionRef} aria-label="Introduction">
       <div className="hero-stage">
-        <span className="backdrop" aria-hidden="true" />
+        <span className="orb" aria-hidden="true" />
+        <span className="ring" aria-hidden="true" />
 
         <div className="frame">
           {hasVideo ? (
@@ -179,10 +180,9 @@ export default function Hero({ hasVideo }: Props) {
         .hero{position:relative;height:100svh;min-height:680px;max-height:1200px;overflow:hidden}
         .hero-stage{position:absolute;inset:0;display:flex;justify-content:center;align-items:flex-end;padding-top:72px}
         .frame{position:relative;height:min(90svh,1040px);aspect-ratio:768/960;max-width:100%}
-        .backdrop{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(600px,72vw);height:min(80svh,900px);border-radius:999px 999px 36px 36px;background:linear-gradient(180deg,rgba(91,75,255,.32) 0%,rgba(168,85,247,.24) 48%,rgba(255,107,74,.22) 100%);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7),0 40px 80px -40px rgba(91,75,255,.5);z-index:0}
-        .backdrop::before{content:"";position:absolute;width:62%;aspect-ratio:1;border-radius:50%;left:-26%;top:10%;background:radial-gradient(circle,rgba(14,165,164,.5),transparent 65%);filter:blur(28px)}
-        .backdrop::after{content:"";position:absolute;width:58%;aspect-ratio:1;border-radius:50%;right:-24%;bottom:8%;background:radial-gradient(circle,rgba(236,72,153,.45),transparent 65%);filter:blur(28px)}
-        .backdrop{overflow:visible}
+        .orb{position:absolute;left:50%;top:46%;width:min(640px,74vw);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:conic-gradient(from 210deg,rgba(91,75,255,.55),rgba(236,72,153,.45),rgba(255,107,74,.5),rgba(14,165,164,.45),rgba(91,75,255,.55));filter:blur(70px);opacity:.75;z-index:0}
+        .ring{position:absolute;left:50%;top:46%;width:min(560px,66vw);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;box-shadow:inset 0 0 0 1.5px rgba(91,75,255,.28),0 0 0 1px rgba(255,255,255,.6);z-index:0}
+        .ring::after{content:"";position:absolute;inset:-7%;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(255,107,74,.22)}
         .media{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;position:relative;z-index:1}
         .still{animation:breathe 6s ease-in-out infinite;transform-origin:50% 100%}
         .ground{position:absolute;left:50%;bottom:4%;width:46%;height:5%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(ellipse at center,rgba(13,13,13,.16),rgba(13,13,13,0) 70%);z-index:0}
@@ -201,7 +201,8 @@ export default function Hero({ hasVideo }: Props) {
         @media (max-width: 900px){
           .hero{height:auto;min-height:0;max-height:none;display:flex;flex-direction:column}
           .hero-stage{position:relative;inset:auto;height:62svh;padding-top:84px;flex:none}
-          .backdrop{width:min(330px,84vw);height:calc(62svh - 60px);border-radius:999px 999px 26px 26px}
+          .orb{width:min(360px,92vw);top:52%;filter:blur(50px)}
+          .ring{width:min(300px,78vw);top:52%}
           .frame{height:100%}
           .sound{right:calc(50% - 31svh + 8px)}
           .hero-copy{position:relative;grid-template-columns:1fr;gap:12px;padding-top:12px;padding-bottom:40px}
