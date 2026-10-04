@@ -180,7 +180,7 @@ export default function Hero({ hasVideo }: Props) {
       <style>{`
         .hero{position:relative;height:100svh;min-height:680px;max-height:1200px;overflow:hidden}
         .hero-stage{position:absolute;inset:0;display:flex;justify-content:center;align-items:flex-end;padding-top:72px}
-        .ghost{position:absolute;left:50%;top:50%;transform:translate(-50%,-56%);font-weight:800;font-size:clamp(120px,24vw,420px);letter-spacing:-.06em;line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(91,75,255,.28);user-select:none;white-space:nowrap;pointer-events:none}
+        .ghost{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);font-weight:800;font-size:clamp(150px,27vw,480px);letter-spacing:-.04em;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.13;user-select:none;white-space:nowrap;pointer-events:none;z-index:0}
         .frame{position:relative;height:min(90svh,1040px);aspect-ratio:768/960;max-width:100%}
         .frame::before{content:"";position:absolute;left:50%;top:38%;width:140%;height:70%;transform:translate(-50%,-50%);background:radial-gradient(ellipse at center,rgba(91,75,255,.22),rgba(255,107,74,.14) 45%,transparent 70%);filter:blur(30px);z-index:0;pointer-events:none}
         .media{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;position:relative;z-index:1}
@@ -201,6 +201,7 @@ export default function Hero({ hasVideo }: Props) {
         @media (max-width: 900px){
           .hero{height:auto;min-height:0;max-height:none;display:flex;flex-direction:column}
           .hero-stage{position:relative;inset:auto;height:62svh;padding-top:84px;flex:none}
+          .ghost{top:48%;font-size:30vw;opacity:.16}
           .frame{height:100%}
           .sound{right:calc(50% - 31svh + 8px)}
           .hero-copy{position:relative;grid-template-columns:1fr;gap:12px;padding-top:12px;padding-bottom:40px}
