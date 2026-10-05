@@ -21,14 +21,11 @@ export default function Work() {
   return (
     <section id="work" className="section work" aria-labelledby="work-h">
       <div className="wrap">
-        <p className="tag rv">
-          03 <span>/ Selected work</span>
-        </p>
         <h2 id="work-h" className="h2 rv" style={{ "--i": 1 } as React.CSSProperties}>
-          Things I&rsquo;ve <em>built.</em>
+          Selected <em>work.</em>
         </h2>
         <p className="lead sub rv" style={{ "--i": 2 } as React.CSSProperties}>
-          {PROJECTS.length} projects from the resume. Hover, tap or focus a panel to open it.
+          {PROJECTS.length} projects. Hover, tap or focus a panel to open it.
         </p>
 
         <div className={`gallery rv ${isMobile ? "is-stack" : ""}`} style={{ "--i": 3 } as React.CSSProperties}>
@@ -60,9 +57,6 @@ export default function Work() {
 
                 <div className="body" id={`panel-${p.id}`} hidden={!isOpen && isMobile}>
                   <div className="text">
-                    <p className="mono kicker">
-                      {p.index} / {p.kicker}
-                    </p>
                     <h3 id={`p-${p.id}`}>{p.title}</h3>
                     <p className="desc">{p.description}</p>
                     <ul className="features">
@@ -80,7 +74,7 @@ export default function Work() {
                     </ul>
                     {p.github && (
                       <a href={p.github} className="btn btn-ghost" target="_blank" rel="noreferrer">
-                        View on GitHub ↗
+                        View on GitHub
                       </a>
                     )}
                   </div>
@@ -109,7 +103,6 @@ export default function Work() {
         .body{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;padding:clamp(22px,3vw,40px);opacity:0;transform:translateY(10px);transition:opacity .6s var(--ease) .25s,transform .6s var(--ease) .25s;min-width:560px}
         .panel.is-open .body{opacity:1;transform:none}
         .text{display:flex;flex-direction:column;gap:12px;min-width:0;overflow:auto}
-        .kicker{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--pc);font-weight:700}
         .text h3{font-size:clamp(22px,2.4vw,34px)}
         .desc{color:var(--ink-2);font-size:15px;line-height:1.55}
         .features{list-style:none;margin:4px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 14px}
@@ -136,14 +129,14 @@ export default function Work() {
   );
 }
 
-/** Pure CSS/JSX grayscale mini-UI built from the résumé's own facts for each project. */
+/** Pure CSS/JSX grayscale mini-UI built from the resume's own facts for each project. */
 function Illustration({ kind }: { kind: Project["illustration"] }) {
   return (
     <div className={`ui ui-${kind}`}>
       {kind === "agents" && (
         <>
           <div className="ui-row">
-            <span className="ui-pill">07:00 · daily</span>
+            <span className="ui-pill">Daily, 07:00</span>
             <span className="ui-txt">Next event day: crew chat</span>
           </div>
           {[
@@ -155,11 +148,13 @@ function Illustration({ kind }: { kind: Project["illustration"] }) {
               <span className="ui-dot" />
               <span className="ui-k">{src}</span>
               <span className="ui-v">{act}</span>
-              <span className="ui-tick">✓</span>
+              <svg className="ui-tick" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true">
+                <path d="M2.5 6.5l2.5 2.5 4.5-5.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </div>
           ))}
           <div className="ui-chat">
-            <b>~7 scheduled agents</b>
+            <b>Around seven scheduled agents</b>
             <span>Every action visible to the team: a chat, a digest, a board update.</span>
           </div>
         </>
@@ -239,7 +234,7 @@ function Illustration({ kind }: { kind: Project["illustration"] }) {
             <div className="ui-lock">
               <span />
             </div>
-            <span className="ui-txt">Entra ID OIDC / PKCE · signed JWT session · server-side access list</span>
+            <span className="ui-txt">Entra ID OIDC / PKCE, signed JWT session, server-side access list</span>
           </div>
           <div className="ui-grid">
             {["Directory", "Dashboards", "Reports", "CRM cards", "Admin tools", "Runbooks"].map((a, i) => (
@@ -248,7 +243,7 @@ function Illustration({ kind }: { kind: Project["illustration"] }) {
               </span>
             ))}
           </div>
-          <span className="ui-foot">60+ tools in production · 37 catalogued in one directory</span>
+          <span className="ui-foot">60+ tools in production, 37 catalogued in one directory</span>
         </div>
       )}
       {kind === "report" && (
@@ -301,7 +296,7 @@ function Illustration({ kind }: { kind: Project["illustration"] }) {
         .ui-dot{width:9px;height:9px;border-radius:50%;background:var(--pc)}
         .ui-k{font-weight:700}
         .ui-v{color:var(--mute);text-align:right}
-        .ui-tick{font-size:11px;color:var(--pc);font-weight:700}
+        .ui-tick{flex:none;color:var(--pc)}
         .ui-chat{margin-top:auto;background:#fff;border-radius:12px 12px 12px 2px;padding:10px 12px;display:grid;gap:4px;box-shadow:var(--shadow-hair);border-left:3px solid var(--pc)}
         .ui-chat span{color:var(--ink-2)}
         .ui-flow{display:flex;flex-direction:column;gap:6px;justify-content:center;height:100%;position:relative}

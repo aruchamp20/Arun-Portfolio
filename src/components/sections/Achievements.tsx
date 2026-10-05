@@ -55,11 +55,8 @@ export default function Achievements() {
       <div className="pin">
         <div className="wrap head">
           <div>
-            <p className="tag rv">
-              06 <span>/ Achievements</span>
-            </p>
             <h2 id="ach-h" className="h2 rv" style={{ "--i": 1 } as React.CSSProperties}>
-              Proud <em>moments.</em>
+              Career in <em>numbers.</em>
             </h2>
           </div>
           <div className="bar" aria-hidden="true">
@@ -71,9 +68,6 @@ export default function Achievements() {
           {ACHIEVEMENTS.map((a, i) => (
             <Card key={a.id} a={a} i={i} total={ACHIEVEMENTS.length} active={i === nearest} color={CARD_COLORS[i % CARD_COLORS.length]} />
           ))}
-          <div className="end mono" aria-hidden="true">
-            and counting →
-          </div>
         </div>
       </div>
 
@@ -84,7 +78,6 @@ export default function Achievements() {
         .bar{width:min(240px,30vw);height:2px;background:var(--line);border-radius:2px;overflow:hidden;margin-bottom:10px}
         .bar span{display:block;height:100%;background:var(--grad);transform-origin:left;transition:transform .15s linear}
         .track{display:flex;gap:22px;align-items:center;padding-left:max(var(--gutter),calc((100vw - 1320px)/2 + var(--gutter)));padding-right:var(--gutter);will-change:transform;width:max-content}
-        .end{flex:none;font-size:14px;color:var(--accent-ink);font-weight:700;padding:0 24px}
       `}</style>
     </section>
   );
