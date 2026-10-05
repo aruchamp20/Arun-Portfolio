@@ -68,7 +68,7 @@ export default function IDCard() {
           <div className="strap-text">
             {Array.from({ length: 6 }).map((_, i) => (
               <span key={i}>
-                {PROFILE.name} · {PROFILE.role} ·&nbsp;
+                {PROFILE.name} / {PROFILE.role} /&nbsp;
               </span>
             ))}
           </div>
@@ -125,7 +125,7 @@ export default function IDCard() {
           </div>
 
           <div className="face back">
-            <div className="band mono">WHAT I AM</div>
+            <div className="band mono">PROFILE</div>
             <ul>
               {ID_CARD_BACK.map((line) => (
                 <li key={line}>{line}</li>
@@ -137,7 +137,7 @@ export default function IDCard() {
               </span>
               <span className="mono">signature</span>
             </div>
-            <p className="found mono">If found, say hello · {PROFILE.email}</p>
+            <p className="found mono">If found: {PROFILE.email}</p>
           </div>
         </button>
       </div>

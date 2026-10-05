@@ -176,7 +176,6 @@
 
   .h2 {
     font-size: clamp(38px, 6vw, 76px);
-    margin-top: 18px;
     max-width: 14ch;
   }
   .h2 em,

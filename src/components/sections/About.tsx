@@ -9,30 +9,24 @@ export default function About() {
       <div className="wrap">
         <div className="about-grid">
           <div className="col intro">
-            <p className="tag rv">
-              01 <span>/ About</span>
-            </p>
             <h2 id="about-h" className="h2 rv" style={{ "--i": 1 } as React.CSSProperties}>
               Hi, I&rsquo;m <em>{PROFILE.firstName}.</em>
             </h2>
             <p className="lead rv" style={{ "--i": 2 } as React.CSSProperties}>
               {PROFILE.resumeSummary}
             </p>
-            <p className="extra rv" style={{ "--i": 3 } as React.CSSProperties}>
-              {PROFILE.extraLine}
-            </p>
-            <div className="btns rv" style={{ "--i": 4 } as React.CSSProperties}>
+            <div className="btns rv" style={{ "--i": 3 } as React.CSSProperties}>
               <a href={PROFILE.resume} className="btn btn-primary" download={PROFILE.resumeFileName}>
-                Resume <span aria-hidden="true">↓</span>
+                Download resume
               </a>
               {PROFILE.github && (
                 <a href={PROFILE.github} className="btn btn-ghost" target="_blank" rel="noreferrer">
-                  GitHub ↗
+                  GitHub
                 </a>
               )}
               {PROFILE.linkedin && (
                 <a href={PROFILE.linkedin} className="btn btn-ghost" target="_blank" rel="noreferrer">
-                  LinkedIn ↗
+                  LinkedIn
                 </a>
               )}
             </div>
@@ -58,7 +52,6 @@ export default function About() {
                 {PROFILE.quote}
                 <span className="accent">&rdquo;</span>
               </p>
-              <cite className="mono">from the resume</cite>
             </blockquote>
           </div>
         </div>
@@ -69,7 +62,6 @@ export default function About() {
         .col{display:flex;flex-direction:column;min-width:0}
         .intro{gap:18px}
         .intro .h2{max-width:none}
-        .extra{color:var(--ink-2);font-size:15px;line-height:1.6;padding-left:16px;border-left:3px solid var(--accent-3);border-radius:2px}
         .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
         .card-col{align-items:center;justify-content:flex-start;min-height:560px}
         .facts{justify-content:center;gap:10px}
@@ -84,7 +76,6 @@ export default function About() {
         .quote{margin:28px 0 0;padding:22px 24px;background:linear-gradient(135deg,rgba(91,75,255,.1),rgba(236,72,153,.1));border-radius:22px;box-shadow:inset 0 0 0 1px rgba(91,75,255,.18)}
         .quote p{font-size:18px;line-height:1.45;letter-spacing:-.01em}
         .quote .accent{font-size:26px;line-height:0}
-        .quote cite{display:block;margin-top:10px;font-style:normal;font-size:11px;color:var(--mute);letter-spacing:.06em;text-transform:uppercase}
         @media (max-width: 1100px){.about-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.card-col{grid-row:1;grid-column:2}.intro{grid-column:1}.facts{grid-column:1/-1}}
         @media (max-width: 760px){.about-grid{grid-template-columns:1fr}.card-col{grid-row:auto;grid-column:auto;min-height:520px}.intro,.facts{grid-column:auto}}
       `}</style>

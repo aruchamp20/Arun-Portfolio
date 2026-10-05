@@ -4,7 +4,7 @@ import { useState } from "react";
 import { PROFILE } from "@/lib/data";
 import { scrollToTarget } from "@/lib/scroll";
 
-const LINES = ["Let's build", "something together."];
+const LINES = ["Open to", "new roles."];
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
@@ -40,9 +40,6 @@ export default function Contact() {
     <>
       <section id="contact" className="section contact" aria-labelledby="contact-h">
         <div className="wrap">
-          <p className="tag rv">
-            07 <span>/ Contact</span>
-          </p>
           <h2 id="contact-h" className="big rv" style={{ "--i": 1 } as React.CSSProperties} aria-label={LINES.join(" ")}>
             {LINES.map((line, li) => (
               <span className="line" key={li} aria-hidden="true">
@@ -60,7 +57,7 @@ export default function Contact() {
               {PROFILE.email}
             </a>
             <button type="button" className={`copy ${copied ? "is-copied" : ""}`} onClick={copy}>
-              {copied ? "Copied ✓" : "Copy"}
+              {copied ? "Copied" : "Copy"}
             </button>
             <span className="sr-only" aria-live="polite">
               {copied ? "Email address copied" : ""}
@@ -73,12 +70,12 @@ export default function Contact() {
             </a>
             {PROFILE.github && (
               <a href={PROFILE.github} className="btn btn-ghost" target="_blank" rel="noreferrer">
-                GitHub ↗
+                GitHub
               </a>
             )}
             {PROFILE.linkedin && (
               <a href={PROFILE.linkedin} className="btn btn-ghost" target="_blank" rel="noreferrer">
-                LinkedIn ↗
+                LinkedIn
               </a>
             )}
             <span className="loc mono">{PROFILE.location}</span>
@@ -90,7 +87,7 @@ export default function Contact() {
                 <path id="circ" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0" />
               </defs>
               <text fontSize="11.5" letterSpacing="2.4" fill="currentColor" fontFamily="var(--font-mono)" textLength="272" lengthAdjust="spacingAndGlyphs">
-                <textPath href="#circ">say hello · say hello · say hello</textPath>
+                <textPath href="#circ">get in touch / get in touch /</textPath>
               </text>
             </svg>
             <span className="badge-dot" />
@@ -111,7 +108,7 @@ export default function Contact() {
               scrollToTarget("top");
             }}
           >
-            Back to top ↑
+            Back to top
           </a>
           <p className="mono">Built with Next.js</p>
         </div>
@@ -119,7 +116,7 @@ export default function Contact() {
 
       <style>{`
         .contact{padding-bottom:clamp(64px,10vh,120px)}
-        .big{margin-top:18px;font-size:clamp(44px,9.4vw,140px);line-height:.95;max-width:none}
+        .big{margin-top:0;font-size:clamp(44px,9.4vw,140px);line-height:.95;max-width:none}
         .line{display:block;white-space:nowrap}
         .ch{display:inline-block;transition:transform .5s var(--ease)}
         .ch:hover{transform:translateY(-14%);transition-duration:.18s}

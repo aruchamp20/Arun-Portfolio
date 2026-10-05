@@ -111,7 +111,6 @@ export default function Navigation() {
             {NAV.map((n, i) => (
               <li key={n.id} style={{ "--i": i } as React.CSSProperties}>
                 <a href={`#${n.id}`} onClick={go(n.id)} tabIndex={open ? 0 : -1}>
-                  <span className="mono">0{i + 1}</span>
                   {n.label}
                 </a>
               </li>
@@ -145,7 +144,6 @@ export default function Navigation() {
         .overlay li{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(120ms + var(--i)*60ms)}
         .overlay.is-open li{opacity:1;transform:none}
         .overlay a{display:flex;align-items:baseline;gap:18px;font-size:clamp(34px,9vw,56px);font-weight:700;letter-spacing:-.045em;line-height:1.1}
-        .overlay a .mono{font-size:13px;color:var(--accent)}
         .overlay-foot{margin-top:40px;font-size:12px;color:var(--mute)}
         @media (min-width: 900px){.nav-links{display:block}.menu-btn{display:none}.overlay{display:none}}
       `}</style>

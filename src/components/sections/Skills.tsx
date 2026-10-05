@@ -35,11 +35,8 @@ export default function Skills() {
   return (
     <section id="skills" className="section skills" aria-labelledby="skills-h">
       <div className="wrap">
-        <p className="tag rv">
-          02 <span>/ Skills</span>
-        </p>
         <h2 id="skills-h" className="h2 rv" style={{ "--i": 1 } as React.CSSProperties}>
-          The periodic table of <em>my stack.</em>
+          What I <em>work with.</em>
         </h2>
 
         <div className="fchips rv" role="group" aria-label="Filter skills by family" style={{ "--i": 2 } as React.CSSProperties}>
@@ -84,7 +81,7 @@ export default function Skills() {
               <TechLogo name={current.logo} size={150} glow={isBrand(current.logo)} />
             </div>
             <p className="mono fam" style={{ color: fc(current.family) }}>
-              {String(current.number).padStart(2, "0")} · {current.family}
+              {String(current.number).padStart(2, "0")} {current.family}
             </p>
             <h3 className="ins-name">{current.name}</h3>
             {!isBrand(current.logo) || logoName(current.logo) !== current.name ? (

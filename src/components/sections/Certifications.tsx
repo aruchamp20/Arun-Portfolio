@@ -5,14 +5,11 @@ export default function Certifications() {
     <section id="certifications" className="section certs hairline-y" aria-labelledby="certs-h">
       <div className="wrap certs-grid">
         <div className="sticky">
-          <p className="tag rv">
-            04 <span>/ Certifications</span>
-          </p>
           <h2 id="certs-h" className="h2 rv" style={{ "--i": 1 } as React.CSSProperties}>
-            Always <em>learning.</em>
+            Salesforce <em>certified.</em>
           </h2>
           <p className="count mono rv" style={{ "--i": 2 } as React.CSSProperties}>
-            {String(CERTIFICATIONS.length).padStart(2, "0")} certifications · Salesforce
+            {CERTIFICATIONS.length} certifications
           </p>
         </div>
 
@@ -24,11 +21,11 @@ export default function Certifications() {
                 <span className="title">{c.title}</span>
                 <span className="issuer mono">
                   {c.issuer}
-                  {c.year ? ` · ${c.year}` : ""}
+                  {c.year ? `, ${c.year}` : ""}
                 </span>
-                <span className="arrow" aria-hidden="true">
-                  ↗
-                </span>
+                <svg className="arrow" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                  <path d="M4.5 11.5l7-7M6 4.5h5.5V10" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </a>
             </li>
           ))}
@@ -51,7 +48,7 @@ export default function Certifications() {
         .cert-row-link:hover .cert-idx,.cert-row-link:focus-visible .cert-idx,.cert-row-link:hover .issuer,.cert-row-link:focus-visible .issuer{color:rgba(255,255,255,.7)}
         .title{font-size:clamp(18px,2vw,26px);font-weight:600;letter-spacing:-.03em;line-height:1.15}
         .issuer{font-size:12px;color:var(--mute);white-space:nowrap}
-        .arrow{opacity:0;transform:translate(-8px,8px);transition:opacity .5s var(--ease),transform .5s var(--ease);font-size:18px}
+        .arrow{opacity:0;transform:translate(-8px,8px);transition:opacity .5s var(--ease),transform .5s var(--ease);justify-self:center}
         .cert-row-link:hover .arrow,.cert-row-link:focus-visible .arrow{opacity:1;transform:none}
         @media (max-width: 900px){.certs-grid{grid-template-columns:1fr}.sticky{position:relative;top:0}.cert-row-link{grid-template-columns:36px 1fr 24px;gap:12px;padding:20px 8px}.issuer{grid-column:2;grid-row:2;white-space:normal}}
       `}</style>

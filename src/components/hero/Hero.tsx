@@ -163,13 +163,13 @@ export default function Hero({ hasVideo }: Props) {
         </p>
         <div className="ctas rv" style={{ "--i": 3 } as React.CSSProperties}>
           <a href="#work" className="btn btn-primary" onClick={go("work")}>
-            Explore work
+            View projects
           </a>
           <a href="#contact" className="btn btn-ghost" onClick={go("contact")}>
-            Let&rsquo;s talk
+            Get in touch
           </a>
           <a href={PROFILE.resume} className="btn btn-ghost" download={PROFILE.resumeFileName}>
-            Resume <span aria-hidden="true">↓</span>
+            Download resume
           </a>
         </div>
       </div>

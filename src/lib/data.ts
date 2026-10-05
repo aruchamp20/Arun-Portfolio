@@ -35,7 +35,6 @@ export type Project = {
   id: string;
   index: string;
   title: string;
-  kicker: string;
   description: string;
   features: string[];
   tech: string[];
@@ -73,9 +72,6 @@ export const PROFILE = {
   location: "Bristol, United Kingdom",
   resumeSummary:
     "I run LLM agents in production and build what they run on. Nine years on the Salesforce platform, the last five leading CRM engineering at GDS Group: keeping Salesforce and HubSpot agreeing, around seven scheduled agents working the live systems, and the AI automation and internal software on top, built with Claude Code and MCP. As a single engineer I have shipped 60+ internal tools into production, each owned end to end from build and deployment to access control and support. 4x Salesforce Certified with an MSc in Advanced Computer Science. Seeking AI automation, integration, RevOps or solutions engineering roles.",
-  /** One extra short line, from the resume's "Leadership & ways of working". */
-  extraLine:
-    "Work in the open: dry-run defaults, read-back verification and visible agent actions, so every automated change can be checked by a person.",
   /** Paraphrase of the resume's own wording (used as the About quote). */
   quote:
     "Every automated change should be visible, dry-run first, and checkable by a person.",
@@ -174,7 +170,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     id: "birlasoft",
     kind: "experience",
     start: "2017-08",
-    year: "Aug 2017 – Feb 2019",
+    year: "Aug 2017 - Feb 2019",
     title: "Salesforce Developer",
     place: "Birlasoft",
     location: "Noida",
@@ -185,7 +181,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     id: "capgemini",
     kind: "experience",
     start: "2019-02",
-    year: "Feb 2019 – Jan 2020",
+    year: "Feb 2019 - Jan 2020",
     title: "Salesforce Developer",
     place: "Capgemini",
     location: "Hyderabad",
@@ -199,7 +195,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     id: "msc",
     kind: "education",
     start: "2020-09",
-    year: "2020 – 2022",
+    year: "2020 - 2022",
     title: "MSc Advanced Computer Science",
     place: "Northumbria University",
     location: "Newcastle upon Tyne",
@@ -209,7 +205,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     id: "northumbria-intern",
     kind: "experience",
     start: "2021-01",
-    year: "Jan 2021 – Jun 2021",
+    year: "Jan 2021 - Jun 2021",
     title: "Salesforce Manager Intern (Developer / Project Manager)",
     place: "Northumbria University",
     location: "Remote",
@@ -223,7 +219,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     id: "gds",
     kind: "experience",
     start: "2021-08",
-    year: "Aug 2021 – Present",
+    year: "Aug 2021 - Present",
     title: "CRM Technical Lead",
     place: "GDS Group",
     location: "Bristol",
@@ -232,7 +228,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     bullets: [
       "AI agents in production: around seven scheduled LLM agents with tool connectors into Salesforce, monday.com and Microsoft Teams. Each reads current state, applies business rules and takes one visible action: a chat, a digest, a board update.",
       "Agentic delivery: build with Claude Code, MCP connectors into both CRMs and browser automation for API-less admin screens. Shipped 60+ internal web apps and dashboards into production, 37 catalogued behind one SSO-gated directory, plus 10+ in-CRM React / TypeScript cards.",
-      "Integration layer: 20+ Salesforce–HubSpot syncs from every minute to nightly and 11 production integrations on one connected app.",
+      "Integration layer: 20+ syncs between Salesforce and HubSpot, from every minute to nightly, and 11 production integrations on one connected app.",
       "Data migration: 250,000+ records migrated and reconciled across the two CRMs.",
       "Org ownership: profiles, permission sets, field-level security, sandboxes, user and licence admin, IT support queue.",
     ],
@@ -246,7 +242,6 @@ export const PROJECTS: Project[] = [
     id: "agents",
     index: "01",
     title: "Scheduled LLM agent operations",
-    kicker: "AI agents in production",
     description:
       "Around seven agents on cron with tool connectors into Salesforce, a work-management platform and Teams. Business rules applied to live board and CRM state; output as chats, digests and board updates.",
     features: [
@@ -264,9 +259,8 @@ export const PROJECTS: Project[] = [
     id: "deal-to-order",
     index: "02",
     title: "Deal-to-order integration",
-    kicker: "Three pipelines as code",
     description:
-      "Three Salesforce–HubSpot pipelines as code: idempotent external-ID upsert, signed webhooks, sub-second acknowledgement with deferred processing. A deal-stage change becomes an order in seconds, and the duplicate-order race is gone.",
+      "Three pipelines between Salesforce and HubSpot, written as code: idempotent external-ID upsert, signed webhooks, sub-second acknowledgement with deferred processing. A deal-stage change becomes an order in seconds, and the duplicate-order race is gone.",
     features: [
       "Idempotent external-ID upsert",
       "Signed webhooks",
@@ -282,12 +276,11 @@ export const PROJECTS: Project[] = [
     id: "dupes",
     index: "03",
     title: "Data-quality and duplicate-detection platform",
-    kicker: "One rule set",
     description:
-      "One rule set across ~198,000 contacts and ~64,000 companies, surfaced as a dashboard and an in-record card. 1,289 duplicate groups traced upstream and fixed at the source rather than cleaned repeatedly.",
+      "One rule set across about 198,000 contacts and 64,000 companies, surfaced as a dashboard and an in-record card. 1,289 duplicate groups traced upstream and fixed at the source rather than cleaned repeatedly.",
     features: [
-      "~198,000 contacts scored",
-      "~64,000 companies scored",
+      "About 198,000 contacts scored",
+      "About 64,000 companies scored",
       "Beyond exact-email matching",
       "Dashboard and in-record card",
       "1,289 duplicate groups traced upstream",
@@ -300,7 +293,6 @@ export const PROJECTS: Project[] = [
     id: "migration",
     index: "04",
     title: "CRM migration and reconciliation programme",
-    kicker: "Two CRMs, one customer",
     description:
       "250,000+ records across two CRMs with Bulk API 2.0 write-back of cross-system IDs. Zero-failure, zero-duplicate runs, and both CRMs agree on who a customer is.",
     features: [
@@ -318,7 +310,6 @@ export const PROJECTS: Project[] = [
     id: "sso",
     index: "05",
     title: "Internal application platform and SSO gateway",
-    kicker: "One shared auth layer",
     description:
       "Entra ID OIDC / PKCE, signed JWT sessions, access lists re-checked server-side on every request. 60+ tools in production, 37 catalogued in one directory, on one shared auth layer.",
     features: [
@@ -336,7 +327,6 @@ export const PROJECTS: Project[] = [
     id: "report",
     index: "06",
     title: "Delegate performance reporting engine",
-    kicker: "Workbook to live dashboard",
     description:
       "Replaced a 24,000-row weekly workbook with a live dashboard. Validated against 253 of 253 values the workbook had already calculated before release.",
     features: [
@@ -352,7 +342,6 @@ export const PROJECTS: Project[] = [
     id: "triage",
     index: "07",
     title: "Agentforce triage agent",
-    kicker: "Design and specification",
     description:
       "Apex invocable actions, topics and test utterances for a Salesforce pipeline-triage agent. Not yet deployed.",
     features: [
@@ -398,14 +387,14 @@ export const ACHIEVEMENTS: Achievement[] = [
     id: "contacts",
     label: "Contacts scored",
     caption: "In-house duplicate detection, one rule set",
-    detail: "Plus ~64,000 companies, surfaced in-record",
+    detail: "Plus about 64,000 companies, surfaced in-record",
     value: 198000,
     prefix: "~",
     logo: "hubspot",
   },
   {
     id: "syncs",
-    label: "Salesforce–HubSpot syncs",
+    label: "Salesforce and HubSpot syncs",
     caption: "From every minute to nightly",
     detail: "11 production integrations on one connected app",
     value: 20,

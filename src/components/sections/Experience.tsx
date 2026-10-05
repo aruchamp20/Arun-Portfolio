@@ -13,15 +13,9 @@ export default function Experience() {
   return (
     <section id="experience" className="section exp" aria-labelledby="exp-h">
       <div className="wrap">
-        <p className="tag rv">
-          05 <span>/ Experience</span>
-        </p>
         <h2 id="exp-h" className="h2 rv" style={{ "--i": 1 } as React.CSSProperties}>
-          One path, <em>so far.</em>
+          Experience and <em>education.</em>
         </h2>
-        <p className="lead sub rv" style={{ "--i": 2 } as React.CSSProperties}>
-          Education and experience in chronological order, from the resume.
-        </p>
 
         <ol className="timeline" ref={ref} style={{ "--p": drawn } as React.CSSProperties}>
           <span className="tl-spine" aria-hidden="true">
@@ -40,7 +34,7 @@ export default function Experience() {
                 <div className="stop-card card">
                   <h3>{it.title}</h3>
                   <p className="place">
-                    {it.place} · {it.location}
+                    {it.place}, {it.location}
                   </p>
                   <p className="detail">{it.detail}</p>
                   {it.bullets && (
@@ -60,17 +54,14 @@ export default function Experience() {
               <span className="year mono">Next</span>
             </div>
             <div className="stop-card dashed">
-              <h3>
-                Next: <em className="accent">Your team?</em>
-              </h3>
-              <p className="detail">Seeking AI automation, integration, RevOps or solutions engineering roles.</p>
+              <h3>What I&rsquo;m looking for</h3>
+              <p className="detail">AI automation, integration, RevOps or solutions engineering roles.</p>
             </div>
           </li>
         </ol>
       </div>
 
       <style>{`
-        .sub{margin-top:18px;max-width:46ch}
         .timeline{position:relative;list-style:none;margin:48px 0 0;padding:0 0 0 clamp(28px,5vw,64px);display:grid;gap:28px}
         .tl-spine{position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--line);border-radius:2px}
         .tl-spine-fill{position:absolute;inset:0;background:linear-gradient(180deg,#5b4bff,#ec4899,#ff6b4a);transform:scaleY(var(--p,0));transform-origin:top;transition:transform .2s linear}
