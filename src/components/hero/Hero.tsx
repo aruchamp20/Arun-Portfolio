@@ -100,6 +100,8 @@ export default function Hero({ hasVideo }: Props) {
       <div className="hero-stage">
 
         <div className="frame">
+          {/* Paper-coloured silhouette that hides the 3D backdrop behind the person (mask set by Backdrop). */}
+          <span className={`cut ${hasVideo ? "" : "still"}`} aria-hidden="true" />
           {hasVideo ? (
             <video
               ref={videoRef}
@@ -180,6 +182,8 @@ export default function Hero({ hasVideo }: Props) {
         .frame{position:relative;height:min(90svh,1040px);aspect-ratio:768/960;max-width:100%}
         .media{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;position:relative;z-index:1}
         .still{animation:breathe 6s ease-in-out infinite;transform-origin:50% 100%}
+        .cut{position:absolute;inset:0;z-index:1;background:var(--paper);mask-size:cover;mask-position:center;mask-repeat:no-repeat;-webkit-mask-size:cover;-webkit-mask-position:center;-webkit-mask-repeat:no-repeat;display:none}
+        .cut.on{display:block}
         .ground{position:absolute;left:50%;bottom:3.5%;width:52%;height:5%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(ellipse at center,rgba(13,13,13,.22),rgba(13,13,13,0) 70%);z-index:0}
         .sound{position:absolute;right:calc(50% - min(45svh,520px) + 8px);bottom:28px;width:46px;height:46px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;z-index:3;transition:transform .5s var(--ease),background .4s var(--ease)}
         .sound:hover{transform:translateY(-2px)}

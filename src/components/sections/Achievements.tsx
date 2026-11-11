@@ -31,10 +31,14 @@ export default function Achievements() {
     const t = trackRef.current;
     if (!t) return;
     const centre = window.innerWidth / 2;
+    const flat = prefersReducedMotion();
     let best = 0;
     let bestD = Infinity;
     Array.from(t.children).forEach((c, i) => {
       const r = (c as HTMLElement).getBoundingClientRect();
+      const off = (r.left + r.width / 2 - centre) / centre;
+      // Coverflow: cards turn their faces toward the centre of the screen.
+      if (!flat) (c as HTMLElement).style.setProperty("--ry", `${(-Math.max(-1, Math.min(1, off)) * 28).toFixed(2)}deg`);
       const d = Math.abs(r.left + r.width / 2 - centre);
       if (d < bestD) {
         bestD = d;
@@ -147,7 +151,8 @@ function Card({ a, i, total, active, color }: { a: Achievement; i: number; total
       </div>
       <style>{`
         .ach-card{flex:none;width:clamp(340px,40vw,540px);height:clamp(260px,36vh,310px);background:linear-gradient(160deg,#fff 55%,color-mix(in srgb,var(--cc) 14%,#fff));border-radius:28px;padding:22px 24px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 1px 0 rgba(13,13,13,.04),0 10px 30px -22px rgba(13,13,13,.25);transition:transform .7s var(--ease),box-shadow .7s var(--ease)}
-        .ach-card.is-active{transform:translateY(-12px);box-shadow:0 40px 70px -30px color-mix(in srgb,var(--cc) 60%,transparent),0 2px 6px -2px rgba(13,13,13,.06)}
+        .ach-card{transform:perspective(1200px) rotateY(var(--ry,0deg))}
+        .ach-card.is-active{transform:perspective(1200px) translateY(-12px) rotateY(var(--ry,0deg));box-shadow:0 40px 70px -30px color-mix(in srgb,var(--cc) 60%,transparent),0 2px 6px -2px rgba(13,13,13,.06)}
         .ach-top{display:flex;justify-content:space-between;align-items:flex-start}
         .ach-tile{width:72px;height:72px;border-radius:20px;background:color-mix(in srgb,var(--cc) 12%,#fff);display:grid;place-items:center;box-shadow:var(--shadow-hair);transition:box-shadow .7s var(--ease)}
         .ach-card.is-active .ach-tile{box-shadow:var(--shadow-hair),0 12px 30px -14px rgba(13,13,13,.3)}

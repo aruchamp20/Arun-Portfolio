@@ -11,15 +11,18 @@ import Experience from "./sections/Experience";
 import Achievements from "./sections/Achievements";
 import Contact from "./sections/Contact";
 import { SmoothScroll } from "@/lib/scroll";
-import { useRevealObserver } from "@/lib/hooks";
+import { useRevealObserver, useTilt } from "@/lib/hooks";
+import Backdrop from "./three/Backdrop";
 
 export default function App({ hasVideo }: { hasVideo: boolean }) {
   const main = useRef<HTMLElement>(null);
   useRevealObserver(main);
+  useTilt(".el, .inspector, .stop-card, .quote, .panel.is-open");
 
   return (
     <>
       <SmoothScroll />
+      <Backdrop />
       <a href="#about" className="skip">
         Skip to content
       </a>

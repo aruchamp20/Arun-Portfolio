@@ -115,10 +115,10 @@ export default function Skills() {
         .fchip.is-on .sw{background:#fff}
         .fchip.is-on .mono{color:rgba(255,255,255,.7)}
         .layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:28px;margin-top:36px;align-items:start}
-        .grid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;list-style:none;margin:0;padding:0}
+        .grid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;list-style:none;margin:0;padding:0;perspective:1400px}
         .grid li{display:contents}
         .el{width:100%}
-        .el{position:relative;aspect-ratio:1;border-radius:14px;background:var(--card);box-shadow:var(--shadow-hair),inset 0 3px 0 var(--fc);padding:9px 10px;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;text-align:left;opacity:0;transform:translateY(16px) scale(.96);transition:opacity .7s var(--ease) var(--d),transform .7s var(--ease) var(--d),box-shadow .4s var(--ease),filter .4s var(--ease),background .4s var(--ease),color .4s var(--ease)}
+        .el{position:relative;aspect-ratio:1;border-radius:14px;background:var(--card);box-shadow:var(--shadow-hair),inset 0 3px 0 var(--fc);padding:9px 10px;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;text-align:left;opacity:0;transform:perspective(500px) rotateX(75deg) translateY(16px) scale(.96);transform-origin:50% 100%;transition:opacity .7s var(--ease) var(--d),transform .7s var(--ease) var(--d),box-shadow .4s var(--ease),filter .4s var(--ease),background .4s var(--ease),color .4s var(--ease)}
         .grid.is-in .el{opacity:1;transform:none}
         .grid.is-in .el.is-dim{opacity:.25;filter:grayscale(1)}
         .el:hover,.el.is-current{background:var(--fc);color:#fff;box-shadow:0 18px 36px -18px var(--fc)}

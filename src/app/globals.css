@@ -48,8 +48,15 @@
     box-sizing: border-box;
   }
 
+  /* The wash lives on html, not body: body's background would paint over the z-index:-1 3D backdrop. */
   html {
-    background: var(--paper);
+    background:
+      radial-gradient(900px 600px at 8% 0%, rgba(91, 75, 255, 0.14), transparent 60%),
+      radial-gradient(800px 600px at 100% 12%, rgba(255, 107, 74, 0.14), transparent 60%),
+      radial-gradient(900px 700px at 50% 60%, rgba(14, 165, 164, 0.1), transparent 60%),
+      radial-gradient(700px 600px at 0% 100%, rgba(236, 72, 153, 0.12), transparent 60%),
+      var(--paper);
+    background-attachment: fixed;
     color: var(--ink);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -74,13 +81,6 @@
     line-height: 1.55;
     overflow-x: hidden;
     overflow-x: clip;
-    background:
-      radial-gradient(900px 600px at 8% 0%, rgba(91, 75, 255, 0.14), transparent 60%),
-      radial-gradient(800px 600px at 100% 12%, rgba(255, 107, 74, 0.14), transparent 60%),
-      radial-gradient(900px 700px at 50% 60%, rgba(14, 165, 164, 0.1), transparent 60%),
-      radial-gradient(700px 600px at 0% 100%, rgba(236, 72, 153, 0.12), transparent 60%),
-      var(--paper);
-    background-attachment: fixed;
   }
 
   a {
@@ -253,11 +253,13 @@
     box-shadow: inset 0 0 0 1.5px var(--accent);
   }
 
-  /* Reveal-on-scroll (RevealObserver adds .is-in once) */
+  /* Reveal-on-scroll (RevealObserver adds .is-in once): blocks stand up out of the page in 3D */
   .rv {
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+    /* Hinged at the top so the box starts ~20px low like before: RevealObserver measures this transformed box. */
+    transform: perspective(900px) translateY(20px) rotateX(-26deg);
+    transform-origin: 50% 0;
+    transition: opacity 0.9s var(--ease), transform 1.1s var(--ease);
     transition-delay: calc(var(--i, 0) * 80ms);
   }
   .rv.is-in {
@@ -267,10 +269,12 @@
   .rv-mask {
     display: block;
     overflow: hidden;
+    perspective: 700px;
   }
   .rv-mask > * {
     display: block;
-    transform: translateY(110%);
+    transform: translateY(110%) rotateX(-55deg);
+    transform-origin: 50% 0;
     transition: transform 1s var(--ease);
     transition-delay: calc(var(--i, 0) * 80ms);
   }

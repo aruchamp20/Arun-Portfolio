@@ -1,6 +1,6 @@
 # Arun Bondalapati portfolio
 
-A single-page, "talking-video" personal portfolio. An indigo, coral, teal, amber and pink palette on warm paper; one continuous scroll; every section its own component with its own animation. Built with Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS 4 and Lenis. No three.js, no GSAP, no external scripts at runtime, self-hosted fonts.
+A single-page, "talking-video" personal portfolio. An indigo, coral, teal, amber and pink palette on warm paper; one continuous scroll; every section its own component with its own animation. Built with Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS 4, Lenis and three.js. No GSAP, no external scripts at runtime, self-hosted fonts.
 
 Every word on the site comes from the resume in `public/Arun-Bondalapati-CV.pdf`, transcribed into `src/lib/data.ts`. Components only read from that file.
 
@@ -20,13 +20,14 @@ Requires Node 20+.
 
 | # | Section | Component | Animation |
 |---|---------|-----------|-----------|
-| - | Hero | `components/hero/Hero.tsx` | Looping intro video (or still) multiplied into the paper; sound unlock; pauses when <35 % visible |
+| - | 3D backdrop | `three/Backdrop.tsx` + `three/scene.ts` | Fixed full-page three.js layer: the systems map (Salesforce, HubSpot, Claude Code, MCP, Zapier, Vercel, Node.js, TypeScript, GitHub) with data pulses, wrapped around the hero photo; scrolling spreads it to the edges as a faint constellation with depth dust. Loaded at idle in its own chunk; one still frame under reduced motion; absent without WebGL |
+| - | Hero | `components/hero/Hero.tsx` | Looping intro video (or still) multiplied into the paper; sound unlock; pauses when <35 % visible. A paper-coloured `.cut` silhouette (flood-filled from the still at runtime) hides the 3D lines behind the person |
 | 01 | About | `sections/About.tsx` + `ui/IDCard.tsx` | Lanyard ID card with damped pendulum swing, idle sway and 3D flip (hover / tap / Enter) |
-| 02 | Skills | `sections/Skills.tsx` | Periodic table of every resume skill; diagonal wave reveal; family filters; sticky inspector with brand logo |
+| 02 | Skills | `sections/Skills.tsx` | Periodic table of every resume skill; diagonal 3D flip-up wave reveal; family filters; sticky inspector with brand logo |
 | 03 | Work | `sections/Work.tsx` | Expanding accordion gallery; grayscale illustrative mini-UIs with clip-path wipe; vertical accordion on mobile |
 | 04 | Certifications | `sections/Certifications.tsx` | Ink-flood index rows on a white band |
 | 05 | Experience | `sections/Experience.tsx` | Education + experience on one timeline; spine draws with scroll progress |
-| 06 | Achievements | `sections/Achievements.tsx` | Pinned horizontal gallery; count-up numbers (easeOutQuart, 1.4 s); nearest card lifts |
+| 06 | Achievements | `sections/Achievements.tsx` | Pinned horizontal gallery; count-up numbers (easeOutQuart, 1.4 s); nearest card lifts; cards turn toward the centre (coverflow) |
 | 07 | Contact | `sections/Contact.tsx` | Letter-hop heading, copy-email chip (aria-live), spinning "get in touch" badge, footer |
 
 Navigation: round initials mark (outline to solid after 40 px, spins on hover), frosted pill with a sliding ink indicator (IntersectionObserver, `rootMargin: -45% 0px -50% 0px`), 2 px scroll-progress bar, full-screen clip-path menu on mobile (Esc closes, scroll locked).
@@ -62,7 +63,7 @@ Then `npm run build` again: `src/app/page.tsx` checks for `public/hero/hero.mp4`
 
 ```
 src/app/            layout.tsx (metadata, OG, fonts, themeColor), page.tsx, globals.css
-src/components/     App.tsx, Navigation.tsx, hero/Hero.tsx, sections/*.tsx, ui/IDCard.tsx, ui/TechLogo.tsx
+src/components/     App.tsx, Navigation.tsx, hero/Hero.tsx, sections/*.tsx, ui/IDCard.tsx, ui/TechLogo.tsx, three/ (WebGL backdrop)
 src/lib/            data.ts (all content), hooks.ts (useInView, useScrollProgress, prefersReducedMotion...), scroll.tsx (Lenis + scrollToTarget)
 src/fonts/          Inter Tight (variable), Instrument Serif (regular + italic), JetBrains Mono (variable), all woff2
 public/hero/        hero-still.webp (+ hero.mp4 / hero.webm when generated)
@@ -92,6 +93,8 @@ CHROME_PATH=$(which chromium) npx lighthouse http://localhost:3000 --preset=desk
 ```
 
 Last measured: Lighthouse Performance 100, Accessibility 100, Best Practices 100 (desktop preset); first-load JS 129 kB.
+
+Site-wide 3D: `.rv` reveals tip up in perspective, and `useTilt` (src/lib/hooks.ts) tilts skill tiles, the inspector, timeline cards, the quote and the open project toward the mouse using the `rotate`/`translate` properties, so it stacks on each element's own transform.
 
 ## Accessibility and motion
 

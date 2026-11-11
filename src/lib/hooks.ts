@@ -121,6 +121,76 @@ export function useActiveSection(ids: string[]) {
   return active;
 }
 
+/**
+ * Mouse-driven 3D tilt for every element matching `selector`. Uses the `rotate`/`translate` properties,
+ * which stack on top of each element's own `transform` animations instead of replacing them.
+ * The parent gets a perspective so the tilt reads as depth. Off for touch and reduced motion.
+ */
+export function useTilt(selector: string, maxDeg = 7) {
+  useEffect(() => {
+    if (prefersReducedMotion() || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    const live = new Map<HTMLElement, { x: number; y: number; tx: number; ty: number; k: number }>();
+    const prepped = new WeakSet<HTMLElement>();
+    let current: HTMLElement | null = null;
+    let raf = 0;
+
+    const tick = () => {
+      raf = 0;
+      live.forEach((s, el) => {
+        s.x += (s.tx - s.x) * 0.16;
+        s.y += (s.ty - s.y) * 0.16;
+        if (el !== current && Math.abs(s.x) < 0.005 && Math.abs(s.y) < 0.005) {
+          el.style.rotate = el.style.translate = "";
+          live.delete(el);
+          return;
+        }
+        const amt = Math.hypot(s.x, s.y);
+        el.style.rotate = amt ? `${-s.y} ${s.x} 0 ${amt * maxDeg * s.k}deg` : "";
+        el.style.translate = `0 0 ${Math.min(1, amt * 2) * 14}px`;
+      });
+      if (live.size) raf = requestAnimationFrame(tick);
+    };
+    const kick = () => {
+      if (!raf) raf = requestAnimationFrame(tick);
+    };
+    const release = () => {
+      if (current) {
+        const s = live.get(current);
+        if (s) s.tx = s.ty = 0;
+      }
+      current = null;
+      kick();
+    };
+    const onMove = (e: PointerEvent) => {
+      const el = (e.target as Element | null)?.closest<HTMLElement>(selector) ?? null;
+      if (el !== current) release();
+      if (!el) return;
+      current = el;
+      if (!prepped.has(el)) {
+        prepped.add(el);
+        let parent = el.parentElement; // skip display:contents wrappers, they have no box to hold a perspective
+        while (parent && getComputedStyle(parent).display === "contents") parent = parent.parentElement;
+        if (parent && getComputedStyle(parent).perspective === "none") parent.style.perspective = "1000px";
+      }
+      const r = el.getBoundingClientRect();
+      const s = live.get(el) ?? { x: 0, y: 0, tx: 0, ty: 0, k: 1 };
+      s.k = Math.min(1, 360 / Math.max(r.width, r.height)); // big panels tilt less so their edges don't swing far
+      s.tx = ((e.clientX - r.left) / r.width) * 2 - 1;
+      s.ty = ((e.clientY - r.top) / r.height) * 2 - 1;
+      live.set(el, s);
+      kick();
+    };
+    document.addEventListener("pointermove", onMove, { passive: true });
+    document.addEventListener("pointerleave", release);
+    return () => {
+      document.removeEventListener("pointermove", onMove);
+      document.removeEventListener("pointerleave", release);
+      cancelAnimationFrame(raf);
+      live.forEach((_, el) => (el.style.rotate = el.style.translate = ""));
+    };
+  }, [selector, maxDeg]);
+}
+
 /** Whether the page has scrolled past `offset` px. */
 export function useScrolled(offset = 40) {
   const [scrolled, setScrolled] = useState(false);
